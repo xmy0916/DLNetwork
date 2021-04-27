@@ -1,6 +1,5 @@
 # 为了下载数据集，取消全局验证
 import ssl
-
 ssl._create_default_https_context = ssl._create_unverified_context
 import argparse
 import torch
@@ -12,6 +11,7 @@ from torch import optim
 from model.LeNet import LeNet
 
 parser = argparse.ArgumentParser(description='Hyperparams')
+parser.add_argument('--save_feature', nargs='?', type=bool, default=False)
 parser.add_argument('--model', nargs='?', type=str, default='lenet')
 args = parser.parse_args()
 
@@ -36,7 +36,7 @@ test_loader = torch.utils.data.DataLoader(test_set, batch_size=10000, shuffle=Fa
 test_data_iter = iter(test_loader)
 test_images, test_labels = test_data_iter.next()
 
-net = model_dict[args.model]['model']()
+net = model_dict[args.model]['model'](saveFeature=args.save_feature)
 loss_function = nn.CrossEntropyLoss()
 optimizer = optim.Adam(net.parameters(), lr=0.001)
 

@@ -6,6 +6,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Hyperparams')
 parser.add_argument('--model', nargs='?', type=str, default='lenet')
+parser.add_argument('--save_feature', nargs='?', type=bool, default=False)
 args = parser.parse_args()
 
 model_dict = {"lenet": {"model":LeNet,"save_path":"params/lenet.pth"}}
@@ -19,7 +20,7 @@ transform = transforms.Compose(
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-net = model_dict[args.model]["model"]()
+net = model_dict[args.model]["model"](args.save_feature)
 net.load_state_dict(torch.load(model_dict[args.model]["save_path"]))
 
 img = Image.open("data/ship.png").convert('RGB')
