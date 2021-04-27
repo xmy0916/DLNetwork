@@ -1,5 +1,6 @@
 # 为了下载数据集，取消全局验证
 import ssl
+
 ssl._create_default_https_context = ssl._create_unverified_context
 import argparse
 import torch
@@ -15,11 +16,9 @@ parser.add_argument('--save_feature', nargs='?', type=bool, default=False)
 parser.add_argument('--model', nargs='?', type=str, default='lenet')
 args = parser.parse_args()
 
-
-
 assert (args.model in model_dict.keys()), "only support {}".format(
     model_dict.keys())
-train_bs,test_bs = model_dict[args.model]["batch_size"]
+train_bs, test_bs = model_dict[args.model]["batch_size"]
 transform = transforms.Compose(
     [transforms.Resize(model_dict[args.model]["input_size"]),
      transforms.ToTensor(),
@@ -34,12 +33,12 @@ test_loader = torch.utils.data.DataLoader(test_set, batch_size=test_bs, shuffle=
 test_data_iter = iter(test_loader)
 test_images, test_labels = test_data_iter.next()
 
-net = model_dict[args.model]['model'](saveFeature=args.save_feature,cfg=model_dict[args.model])
+net = model_dict[args.model]['model'](saveFeature=args.save_feature, cfg=model_dict[args.model])
 
 device = None
 # get device
 if torch.cuda.is_available():
-    device = torch.device("cuda:0")
+    device = torch.device("cuda:1")
 else:
     device = torch.device("cpu")
 net = net.to(device)
@@ -53,8 +52,8 @@ for epoch in range(5):
     for step, data in enumerate(train_loader, start=0):
 
         inputs, labels = data
-        inputs.to(device)
-        labels.to(device)
+        inputs = inputs.to(device)
+        labels = labels.to(device)
         optimizer.zero_grad()
         outputs = net(inputs)
         loss = loss_function(outputs, labels)
@@ -66,8 +65,11 @@ for epoch in range(5):
         print_step = 10
         if step % print_step == 0:  # 每500个batch打印一次训练状态
             with torch.no_grad():
+                test_images = test_images.to(device)
                 outputs = net(test_images)
-                predict_y = torch.max(outputs, dim=1)[1]
+                predict_y = torch.max(outputs, dim=1)[1].cpu()
+                text_labels = test_labels.cpu()
+
                 accuracy = (predict_y == test_labels).sum().item() / test_labels.size(0)
                 print('[%d, %5d] train_loss: %.3f  test_accuracy: %.3f' %
                       (epoch + 1, step + 1, running_loss / print_step, accuracy))
