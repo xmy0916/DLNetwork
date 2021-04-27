@@ -10,6 +10,10 @@ python：python3.7
 - [ ] [GoogleNet](https://arxiv.org/pdf/1409.4842.pdf) 
 - [ ] [ResNet](https://arxiv.org/pdf/1512.03385.pdf) 
 
+# 参数
+- model: 选择使用的模型（字符串类型，例如：--model lenet）
+- save_feature: 设置是否保存特征图(布尔类型，例如：--save_feature True）
+
 # 训练
 ```bash
 python3 train.py --model lenet
@@ -18,3 +22,4 @@ python3 train.py --model lenet
 ```bash
 python3 predict.py --model lenet
 ```
+
