@@ -2,6 +2,7 @@ import torch
 import torchvision.transforms as transforms
 from PIL import Image
 from model.LeNet import LeNet
+from config.config import model_dict
 import argparse
 
 parser = argparse.ArgumentParser(description='Hyperparams')
@@ -9,13 +10,12 @@ parser.add_argument('--model', nargs='?', type=str, default='lenet')
 parser.add_argument('--save_feature', nargs='?', type=bool, default=False)
 args = parser.parse_args()
 
-model_dict = {"lenet": {"model":LeNet,"save_path":"params/lenet.pth"}}
 
 assert (args.model in model_dict.keys()), "only support {}".format(
     model_dict.keys())
 
 transform = transforms.Compose(
-    [transforms.Resize((32, 32)),
+    [transforms.Resize(model_dict[args.model]["input_size"]),
      transforms.ToTensor(),
      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 

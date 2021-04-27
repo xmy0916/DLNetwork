@@ -5,7 +5,7 @@ from utils.util import save_feature
 
 
 class LeNet(nn.Module):
-    def __init__(self,saveFeature = False):
+    def __init__(self,saveFeature = False,cfg = None):
         super(LeNet, self).__init__()
         self.conv1 = nn.Conv2d(3, 6, 5)
         self.relu = nn.ReLU()
@@ -17,10 +17,11 @@ class LeNet(nn.Module):
         self.fc2 = nn.Linear(120, 84)
         self.fc3 = nn.Linear(84, 10)
         self.saveFeature = saveFeature
+        self.cfg = cfg
 
     def forward(self, x):
         x = self.conv1(x)
-        if save_feature:
+        if self.saveFeature:
             save_feature(x, "lenet", "conv1")
         x = self.relu(x)
         x = self.maxpool1(x)
