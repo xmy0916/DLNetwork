@@ -43,11 +43,11 @@ else:
     device = torch.device("cpu")
 net = net.to(device)
 print(net)
-
+print(model_dict[args.model])
 loss_function = nn.CrossEntropyLoss()
-optimizer = optim.Adam(net.parameters(), lr=0.001)
+optimizer = optim.Adam(net.parameters(), lr=model_dict[args.model]['lr'])
 
-for epoch in range(5):
+for epoch in range(model_dict[args.model]['epoch']):
     running_loss = 0.0
     for step, data in enumerate(train_loader, start=0):
 
@@ -62,10 +62,11 @@ for epoch in range(5):
 
         # 打印信息
         running_loss += loss.item()
-        print_step = 10
+        print_step = 100
         if step % print_step == 0:  # 每500个batch打印一次训练状态
             with torch.no_grad():
                 test_images = test_images.to(device)
+                # text_labels = test_labels.to(device)
                 outputs = net(test_images)
                 predict_y = torch.max(outputs, dim=1)[1].cpu()
                 text_labels = test_labels.cpu()
