@@ -1,4 +1,6 @@
 # 深度学习基础网络实现
+系列文章地址：[深度学习基础网络实现-csdn](https://blog.csdn.net/qq_37668436/article/details/116199117) 
+
 框架：pytorch1.8.1
 
 python：python3.7
