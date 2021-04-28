@@ -11,11 +11,12 @@ python：python3.7
 - [ ] [ResNet](https://arxiv.org/pdf/1512.03385.pdf) 
 
 # 细节
-|模型| LeNet |AlexNet| 
-|--|--|--|--|
-| 轮数 | 5 | 5 | 
-| 精度 | 0.622 | 0.800 | 
-| 日志 | [lenet.log](./logs/lenet.log) | [alexnet.log](./logs/alexnet.log) | 
+|模型|LeNet|AlexNet|
+| --- | --- | --- |
+|轮数|5|5|
+|精度|0.622|0.800|
+|日志|[lenet.log](./logs/lenet.log)|[alexnet.log](./logs/alexnet.log)|
+
 
 # 参数
 - model: 选择使用的模型（字符串类型，例如：--model lenet）
