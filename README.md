@@ -12,10 +12,10 @@ python：python3.7
 
 # 细节
 |模型|LeNet|AlexNet|
-| --- | --- | --- |
+| :---: | :---: | :---: |
 |轮数|5|5|
-|精度|0.622|0.800|
-|日志|[lenet.log](./logs/lenet.log)|[alexnet.log](./logs/alexnet.log)|
+|精度|0.622|0.800、0.860(加pretrain)|
+|日志|[lenet.log](./logs/lenet.log)|[alexnet.log](./logs/alexnet.log)、[alexnet_pretrain.log](./logs/alexnet_pretrain.log)|
 
 
 # 参数
