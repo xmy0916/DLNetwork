@@ -8,16 +8,16 @@ python：python3.7
 # 网络
 - [x] [LeNet](http://vision.stanford.edu/cs598_spring07/papers/Lecun98.pdf) 
 - [x] [AlexNet](http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf) 
-- [ ] [VGG](https://arxiv.org/pdf/1409.1556.pdf) 
+- [x] [VGG](https://arxiv.org/pdf/1409.1556.pdf) 
 - [ ] [GoogleNet](https://arxiv.org/pdf/1409.4842.pdf) 
 - [ ] [ResNet](https://arxiv.org/pdf/1512.03385.pdf) 
 
 # 细节
-|模型|LeNet|AlexNet|
-| :---: | :---: | :---: |
-|轮数|5|5|
-|精度|0.622|0.800、0.860(加pretrain)|
-|日志|[lenet.log](./logs/lenet.log)|[alexnet.log](./logs/alexnet.log)、[alexnet_pretrain.log](./logs/alexnet_pretrain.log)|
+|模型|LeNet|AlexNet|VggNet|
+| :---: | :---: | :---: | :---: |
+|轮数|5|5|5|
+|精度|0.622|0.800、0.860(加pretrain)|0.911(加pretrain)|
+|日志|[lenet.log](./logs/lenet.log)|[alexnet.log](./logs/alexnet.log)、[alexnet_pretrain.log](./logs/alexnet_pretrain.log)|[vggnet.log](./logs/vgg16.log)|
 
 
 # 参数
