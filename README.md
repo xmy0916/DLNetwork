@@ -32,4 +32,8 @@ python3 train.py --model lenet
 ```bash
 python3 predict.py --model lenet
 ```
+# 打印网络参数量
+```bash
+python3 params_print.py --model lenet
+```
 
