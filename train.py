@@ -10,6 +10,7 @@ import torch.optim as optim
 import torchvision.transforms as transforms
 from torch import optim
 from config.config import model_dict
+import os
 
 parser = argparse.ArgumentParser(description='Hyperparams')
 parser.add_argument('--save_feature', nargs='?', type=bool, default=False)
@@ -77,4 +78,8 @@ for epoch in range(model_dict[args.model]['epoch']):
                 running_loss = 0.0
 
 print('Finished Training')
+index = model_dict[args.model]['save_path'].rfind("/")
+farther_path = model_dict[args.model]['save_path'][:index]
+if not os.path.exists(farther_path):
+    os.makedirs(farther_path)
 torch.save(net.state_dict(), model_dict[args.model]['save_path'])
