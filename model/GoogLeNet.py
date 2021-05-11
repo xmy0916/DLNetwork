@@ -30,7 +30,7 @@ GoogLeNetOutputs.__annotations__ = {'logits': Tensor, 'aux_logits2': Optional[Te
 _GoogLeNetOutputs = GoogLeNetOutputs
 
 
-def googlenet(cfg, saveFeature = False, progress: bool = True, **kwargs: Any) -> "GoogLeNet":
+def googlenet(saveFeature = False, cfg = None,progress: bool = True, **kwargs: Any) -> "GoogLeNet":
     r"""GoogLeNet (Inception v1) model architecture from
     `"Going Deeper with Convolutions" <http://arxiv.org/abs/1409.4842>`_.
     Args:
