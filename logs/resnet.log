@@ -1,0 +1,494 @@
+nohup: ignoring input
+ResNet(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace=True)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (3): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (4): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (5): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
+  (fc): Linear(in_features=2048, out_features=10, bias=True)
+)
+{'model': <function resnet at 0x7fda0d58a378>, 'name': 'resnet50', 'pretrained': True, 'epoch': 5, 'num_class': 10, 'save_path': 'params/vgg.pth', 'input_size': (112, 112), 'batch_size': (8, 1000), 'lr': 0.0001}
+[1,     1] train_loss: 0.088  test_accuracy: 0.164
+[1,   101] train_loss: 4.190  test_accuracy: 0.617
+[1,   201] train_loss: 3.361  test_accuracy: 0.620
+[1,   301] train_loss: 2.118  test_accuracy: 0.733
+[1,   401] train_loss: 1.467  test_accuracy: 0.761
+[1,   501] train_loss: 1.265  test_accuracy: 0.815
+[1,   601] train_loss: 1.028  test_accuracy: 0.815
+[1,   701] train_loss: 0.894  test_accuracy: 0.840
+[1,   801] train_loss: 0.851  test_accuracy: 0.844
+[1,   901] train_loss: 0.660  test_accuracy: 0.808
+[1,  1001] train_loss: 0.834  test_accuracy: 0.866
+[1,  1101] train_loss: 0.774  test_accuracy: 0.848
+[1,  1201] train_loss: 0.679  test_accuracy: 0.865
+[1,  1301] train_loss: 0.699  test_accuracy: 0.869
+[1,  1401] train_loss: 0.704  test_accuracy: 0.852
+[1,  1501] train_loss: 0.580  test_accuracy: 0.877
+[1,  1601] train_loss: 0.641  test_accuracy: 0.879
+[1,  1701] train_loss: 0.644  test_accuracy: 0.891
+[1,  1801] train_loss: 0.697  test_accuracy: 0.869
+[1,  1901] train_loss: 0.606  test_accuracy: 0.888
+[1,  2001] train_loss: 0.613  test_accuracy: 0.891
+[1,  2101] train_loss: 0.672  test_accuracy: 0.878
+[1,  2201] train_loss: 0.556  test_accuracy: 0.872
+[1,  2301] train_loss: 0.589  test_accuracy: 0.884
+[1,  2401] train_loss: 0.555  test_accuracy: 0.884
+[1,  2501] train_loss: 0.574  test_accuracy: 0.836
+[1,  2601] train_loss: 0.532  test_accuracy: 0.902
+[1,  2701] train_loss: 0.599  test_accuracy: 0.874
+[1,  2801] train_loss: 0.546  test_accuracy: 0.892
+[1,  2901] train_loss: 0.593  test_accuracy: 0.889
+[1,  3001] train_loss: 0.472  test_accuracy: 0.877
+[1,  3101] train_loss: 0.421  test_accuracy: 0.879
+[1,  3201] train_loss: 0.504  test_accuracy: 0.888
+[1,  3301] train_loss: 0.493  test_accuracy: 0.884
+[1,  3401] train_loss: 0.576  test_accuracy: 0.898
+[1,  3501] train_loss: 0.491  test_accuracy: 0.897
+[1,  3601] train_loss: 0.491  test_accuracy: 0.890
+[1,  3701] train_loss: 0.382  test_accuracy: 0.904
+[1,  3801] train_loss: 0.419  test_accuracy: 0.903
+[1,  3901] train_loss: 0.526  test_accuracy: 0.880
+[1,  4001] train_loss: 0.469  test_accuracy: 0.902
+[1,  4101] train_loss: 0.511  test_accuracy: 0.882
+[1,  4201] train_loss: 0.508  test_accuracy: 0.885
+[1,  4301] train_loss: 0.447  test_accuracy: 0.900
+[1,  4401] train_loss: 0.510  test_accuracy: 0.890
+[1,  4501] train_loss: 0.427  test_accuracy: 0.880
+[1,  4601] train_loss: 0.395  test_accuracy: 0.895
+[1,  4701] train_loss: 0.478  test_accuracy: 0.897
+[1,  4801] train_loss: 0.398  test_accuracy: 0.899
+[1,  4901] train_loss: 0.430  test_accuracy: 0.884
+[1,  5001] train_loss: 0.470  test_accuracy: 0.892
+[1,  5101] train_loss: 0.461  test_accuracy: 0.897
+[1,  5201] train_loss: 0.468  test_accuracy: 0.880
+[1,  5301] train_loss: 0.412  test_accuracy: 0.888
+[1,  5401] train_loss: 0.450  test_accuracy: 0.869
+[1,  5501] train_loss: 0.468  test_accuracy: 0.886
+[1,  5601] train_loss: 0.475  test_accuracy: 0.896
+[1,  5701] train_loss: 0.391  test_accuracy: 0.885
+[1,  5801] train_loss: 0.440  test_accuracy: 0.886
+[1,  5901] train_loss: 0.493  test_accuracy: 0.848
+[1,  6001] train_loss: 0.414  test_accuracy: 0.875
+[1,  6101] train_loss: 0.371  test_accuracy: 0.882
+[1,  6201] train_loss: 0.498  test_accuracy: 0.884
+[2,     1] train_loss: 0.000  test_accuracy: 0.878
+[2,   101] train_loss: 0.393  test_accuracy: 0.872
+[2,   201] train_loss: 0.426  test_accuracy: 0.881
+[2,   301] train_loss: 0.319  test_accuracy: 0.894
+[2,   401] train_loss: 0.341  test_accuracy: 0.904
+[2,   501] train_loss: 0.402  test_accuracy: 0.894
+[2,   601] train_loss: 0.398  test_accuracy: 0.877
+[2,   701] train_loss: 0.445  test_accuracy: 0.910
+[2,   801] train_loss: 0.311  test_accuracy: 0.904
+[2,   901] train_loss: 0.312  test_accuracy: 0.887
+[2,  1001] train_loss: 0.394  test_accuracy: 0.901
+[2,  1101] train_loss: 0.328  test_accuracy: 0.892
+[2,  1201] train_loss: 0.356  test_accuracy: 0.874
+[2,  1301] train_loss: 0.337  test_accuracy: 0.901
+[2,  1401] train_loss: 0.417  test_accuracy: 0.870
+[2,  1501] train_loss: 0.345  test_accuracy: 0.892
+[2,  1601] train_loss: 0.363  test_accuracy: 0.879
+[2,  1701] train_loss: 0.387  test_accuracy: 0.894
+[2,  1801] train_loss: 0.315  test_accuracy: 0.889
+[2,  1901] train_loss: 0.298  test_accuracy: 0.888
+[2,  2001] train_loss: 0.370  test_accuracy: 0.894
+[2,  2101] train_loss: 0.315  test_accuracy: 0.894
+[2,  2201] train_loss: 0.304  test_accuracy: 0.877
+[2,  2301] train_loss: 0.346  test_accuracy: 0.901
+[2,  2401] train_loss: 0.331  test_accuracy: 0.867
+[2,  2501] train_loss: 0.306  test_accuracy: 0.864
+[2,  2601] train_loss: 0.297  test_accuracy: 0.889
+[2,  2701] train_loss: 0.330  test_accuracy: 0.895
+[2,  2801] train_loss: 0.365  test_accuracy: 0.899
+[2,  2901] train_loss: 0.305  test_accuracy: 0.914
+[2,  3001] train_loss: 0.311  test_accuracy: 0.898
+[2,  3101] train_loss: 0.281  test_accuracy: 0.905
+[2,  3201] train_loss: 0.271  test_accuracy: 0.905
+[2,  3301] train_loss: 0.251  test_accuracy: 0.910
+[2,  3401] train_loss: 0.332  test_accuracy: 0.896
+[2,  3501] train_loss: 0.255  test_accuracy: 0.904
+[2,  3601] train_loss: 0.245  test_accuracy: 0.915
+[2,  3701] train_loss: 0.225  test_accuracy: 0.916
+[2,  3801] train_loss: 0.193  test_accuracy: 0.907
+[2,  3901] train_loss: 0.303  test_accuracy: 0.886
+[2,  4001] train_loss: 0.243  test_accuracy: 0.894
+[2,  4101] train_loss: 0.287  test_accuracy: 0.894
+[2,  4201] train_loss: 0.306  test_accuracy: 0.892
+[2,  4301] train_loss: 0.300  test_accuracy: 0.896
+[2,  4401] train_loss: 0.324  test_accuracy: 0.904
+[2,  4501] train_loss: 0.223  test_accuracy: 0.883
+[2,  4601] train_loss: 0.248  test_accuracy: 0.903
+[2,  4701] train_loss: 0.255  test_accuracy: 0.906
+[2,  4801] train_loss: 0.239  test_accuracy: 0.893
+[2,  4901] train_loss: 0.253  test_accuracy: 0.903
+[2,  5001] train_loss: 0.247  test_accuracy: 0.903
+[2,  5101] train_loss: 0.243  test_accuracy: 0.914
+[2,  5201] train_loss: 0.286  test_accuracy: 0.911
+[2,  5301] train_loss: 0.236  test_accuracy: 0.916
+[2,  5401] train_loss: 0.260  test_accuracy: 0.899
+[2,  5501] train_loss: 0.260  test_accuracy: 0.908
+[2,  5601] train_loss: 0.190  test_accuracy: 0.910
+[2,  5701] train_loss: 0.161  test_accuracy: 0.882
+[2,  5801] train_loss: 0.240  test_accuracy: 0.906
+[2,  5901] train_loss: 0.245  test_accuracy: 0.888
+[2,  6001] train_loss: 0.227  test_accuracy: 0.910
+[2,  6101] train_loss: 0.239  test_accuracy: 0.899
+[2,  6201] train_loss: 0.254  test_accuracy: 0.909
+[3,     1] train_loss: 0.004  test_accuracy: 0.909
+[3,   101] train_loss: 0.246  test_accuracy: 0.890
+[3,   201] train_loss: 0.252  test_accuracy: 0.911
+[3,   301] train_loss: 0.205  test_accuracy: 0.913
+[3,   401] train_loss: 0.166  test_accuracy: 0.916
+[3,   501] train_loss: 0.179  test_accuracy: 0.898
+[3,   601] train_loss: 0.190  test_accuracy: 0.899
+[3,   701] train_loss: 0.250  test_accuracy: 0.916
+[3,   801] train_loss: 0.167  test_accuracy: 0.925
+[3,   901] train_loss: 0.175  test_accuracy: 0.901
+[3,  1001] train_loss: 0.169  test_accuracy: 0.913
+[3,  1101] train_loss: 0.127  test_accuracy: 0.916
+[3,  1201] train_loss: 0.176  test_accuracy: 0.928
+[3,  1301] train_loss: 0.203  test_accuracy: 0.902
+[3,  1401] train_loss: 0.166  test_accuracy: 0.908
+[3,  1501] train_loss: 0.176  test_accuracy: 0.920
+[3,  1601] train_loss: 0.224  test_accuracy: 0.886
+[3,  1701] train_loss: 0.182  test_accuracy: 0.924
+[3,  1801] train_loss: 0.202  test_accuracy: 0.921
+[3,  1901] train_loss: 0.199  test_accuracy: 0.912
+[3,  2001] train_loss: 0.191  test_accuracy: 0.904
+[3,  2101] train_loss: 0.286  test_accuracy: 0.909
+[3,  2201] train_loss: 0.219  test_accuracy: 0.899
+[3,  2301] train_loss: 0.228  test_accuracy: 0.904
+[3,  2401] train_loss: 0.179  test_accuracy: 0.914
+[3,  2501] train_loss: 0.216  test_accuracy: 0.884
+[3,  2601] train_loss: 0.200  test_accuracy: 0.908
+[3,  2701] train_loss: 0.152  test_accuracy: 0.913
+[3,  2801] train_loss: 0.166  test_accuracy: 0.907
+[3,  2901] train_loss: 0.174  test_accuracy: 0.887
+[3,  3001] train_loss: 0.180  test_accuracy: 0.895
+[3,  3101] train_loss: 0.169  test_accuracy: 0.893
+[3,  3201] train_loss: 0.141  test_accuracy: 0.892
+[3,  3301] train_loss: 0.228  test_accuracy: 0.906
+[3,  3401] train_loss: 0.217  test_accuracy: 0.887
+[3,  3501] train_loss: 0.133  test_accuracy: 0.915
+[3,  3601] train_loss: 0.155  test_accuracy: 0.919
+[3,  3701] train_loss: 0.113  test_accuracy: 0.911
+[3,  3801] train_loss: 0.144  test_accuracy: 0.912
+[3,  3901] train_loss: 0.153  test_accuracy: 0.913
+[3,  4001] train_loss: 0.148  test_accuracy: 0.912
+[3,  4101] train_loss: 0.181  test_accuracy: 0.888
+[3,  4201] train_loss: 0.204  test_accuracy: 0.902
+[3,  4301] train_loss: 0.186  test_accuracy: 0.906
+[3,  4401] train_loss: 0.188  test_accuracy: 0.912
+[3,  4501] train_loss: 0.115  test_accuracy: 0.920
+[3,  4601] train_loss: 0.148  test_accuracy: 0.897
+[3,  4701] train_loss: 0.150  test_accuracy: 0.917
+[3,  4801] train_loss: 0.093  test_accuracy: 0.910
+[3,  4901] train_loss: 0.131  test_accuracy: 0.906
+[3,  5001] train_loss: 0.188  test_accuracy: 0.916
+[3,  5101] train_loss: 0.148  test_accuracy: 0.909
+[3,  5201] train_loss: 0.136  test_accuracy: 0.907
+[3,  5301] train_loss: 0.115  test_accuracy: 0.913
+[3,  5401] train_loss: 0.124  test_accuracy: 0.918
+[3,  5501] train_loss: 0.172  test_accuracy: 0.895
+[3,  5601] train_loss: 0.173  test_accuracy: 0.902
+[3,  5701] train_loss: 0.128  test_accuracy: 0.894
+[3,  5801] train_loss: 0.174  test_accuracy: 0.896
+[3,  5901] train_loss: 0.179  test_accuracy: 0.884
+[3,  6001] train_loss: 0.191  test_accuracy: 0.886
+[3,  6101] train_loss: 0.146  test_accuracy: 0.905
+[3,  6201] train_loss: 0.131  test_accuracy: 0.898
+[4,     1] train_loss: 0.000  test_accuracy: 0.896
+[4,   101] train_loss: 0.130  test_accuracy: 0.892
+[4,   201] train_loss: 0.180  test_accuracy: 0.909
+[4,   301] train_loss: 0.134  test_accuracy: 0.920
+[4,   401] train_loss: 0.122  test_accuracy: 0.920
+[4,   501] train_loss: 0.125  test_accuracy: 0.907
+[4,   601] train_loss: 0.120  test_accuracy: 0.908
+[4,   701] train_loss: 0.165  test_accuracy: 0.897
+[4,   801] train_loss: 0.134  test_accuracy: 0.905
+[4,   901] train_loss: 0.109  test_accuracy: 0.911
+[4,  1001] train_loss: 0.131  test_accuracy: 0.899
+[4,  1101] train_loss: 0.159  test_accuracy: 0.897
+[4,  1201] train_loss: 0.155  test_accuracy: 0.904
+[4,  1301] train_loss: 0.205  test_accuracy: 0.902
+[4,  1401] train_loss: 0.107  test_accuracy: 0.921
+[4,  1501] train_loss: 0.108  test_accuracy: 0.911
+[4,  1601] train_loss: 0.125  test_accuracy: 0.898
+[4,  1701] train_loss: 0.128  test_accuracy: 0.913
+[4,  1801] train_loss: 0.130  test_accuracy: 0.910
+[4,  1901] train_loss: 0.112  test_accuracy: 0.910
+[4,  2001] train_loss: 0.129  test_accuracy: 0.909
+[4,  2101] train_loss: 0.177  test_accuracy: 0.906
+[4,  2201] train_loss: 0.135  test_accuracy: 0.909
+[4,  2301] train_loss: 0.139  test_accuracy: 0.911
+[4,  2401] train_loss: 0.102  test_accuracy: 0.916
+[4,  2501] train_loss: 0.098  test_accuracy: 0.913
+[4,  2601] train_loss: 0.118  test_accuracy: 0.893
+[4,  2701] train_loss: 0.158  test_accuracy: 0.922
+[4,  2801] train_loss: 0.130  test_accuracy: 0.917
+[4,  2901] train_loss: 0.136  test_accuracy: 0.899
+[4,  3001] train_loss: 0.106  test_accuracy: 0.915
+[4,  3101] train_loss: 0.123  test_accuracy: 0.896
+[4,  3201] train_loss: 0.147  test_accuracy: 0.915
+[4,  3301] train_loss: 0.111  test_accuracy: 0.924
+[4,  3401] train_loss: 0.123  test_accuracy: 0.915
+[4,  3501] train_loss: 0.124  test_accuracy: 0.895
+[4,  3601] train_loss: 0.158  test_accuracy: 0.916
+[4,  3701] train_loss: 0.107  test_accuracy: 0.916
+[4,  3801] train_loss: 0.104  test_accuracy: 0.927
+[4,  3901] train_loss: 0.138  test_accuracy: 0.922
+[4,  4001] train_loss: 0.144  test_accuracy: 0.897
+[4,  4101] train_loss: 0.097  test_accuracy: 0.914
+[4,  4201] train_loss: 0.144  test_accuracy: 0.921
+[4,  4301] train_loss: 0.108  test_accuracy: 0.917
+[4,  4401] train_loss: 0.137  test_accuracy: 0.905
+[4,  4501] train_loss: 0.118  test_accuracy: 0.903
+[4,  4601] train_loss: 0.102  test_accuracy: 0.918
+[4,  4701] train_loss: 0.112  test_accuracy: 0.905
+[4,  4801] train_loss: 0.142  test_accuracy: 0.903
+[4,  4901] train_loss: 0.106  test_accuracy: 0.918
+[4,  5001] train_loss: 0.155  test_accuracy: 0.905
+[4,  5101] train_loss: 0.087  test_accuracy: 0.911
+[4,  5201] train_loss: 0.120  test_accuracy: 0.917
+[4,  5301] train_loss: 0.154  test_accuracy: 0.907
+[4,  5401] train_loss: 0.123  test_accuracy: 0.904
+[4,  5501] train_loss: 0.146  test_accuracy: 0.919
+[4,  5601] train_loss: 0.108  test_accuracy: 0.918
+[4,  5701] train_loss: 0.090  test_accuracy: 0.899
+[4,  5801] train_loss: 0.116  test_accuracy: 0.894
+[4,  5901] train_loss: 0.104  test_accuracy: 0.905
+[4,  6001] train_loss: 0.078  test_accuracy: 0.902
+[4,  6101] train_loss: 0.076  test_accuracy: 0.916
+[4,  6201] train_loss: 0.113  test_accuracy: 0.910
+[5,     1] train_loss: 0.000  test_accuracy: 0.906
+[5,   101] train_loss: 0.118  test_accuracy: 0.911
+[5,   201] train_loss: 0.114  test_accuracy: 0.910
+[5,   301] train_loss: 0.097  test_accuracy: 0.910
+[5,   401] train_loss: 0.122  test_accuracy: 0.927
+[5,   501] train_loss: 0.127  test_accuracy: 0.916
+[5,   601] train_loss: 0.100  test_accuracy: 0.907
+[5,   701] train_loss: 0.174  test_accuracy: 0.913
+[5,   801] train_loss: 0.104  test_accuracy: 0.898
+[5,   901] train_loss: 0.102  test_accuracy: 0.900
+[5,  1001] train_loss: 0.104  test_accuracy: 0.913
+[5,  1101] train_loss: 0.082  test_accuracy: 0.903
+[5,  1201] train_loss: 0.074  test_accuracy: 0.919
+[5,  1301] train_loss: 0.084  test_accuracy: 0.912
+[5,  1401] train_loss: 0.106  test_accuracy: 0.894
+[5,  1501] train_loss: 0.099  test_accuracy: 0.902
+[5,  1601] train_loss: 0.090  test_accuracy: 0.904
+[5,  1701] train_loss: 0.075  test_accuracy: 0.920
+[5,  1801] train_loss: 0.112  test_accuracy: 0.911
+[5,  1901] train_loss: 0.114  test_accuracy: 0.910
+[5,  2001] train_loss: 0.142  test_accuracy: 0.902
+[5,  2101] train_loss: 0.131  test_accuracy: 0.915
+[5,  2201] train_loss: 0.133  test_accuracy: 0.903
+[5,  2301] train_loss: 0.096  test_accuracy: 0.920
+[5,  2401] train_loss: 0.096  test_accuracy: 0.919
+[5,  2501] train_loss: 0.104  test_accuracy: 0.916
+[5,  2601] train_loss: 0.078  test_accuracy: 0.911
+[5,  2701] train_loss: 0.108  test_accuracy: 0.888
+[5,  2801] train_loss: 0.100  test_accuracy: 0.907
+[5,  2901] train_loss: 0.127  test_accuracy: 0.896
+[5,  3001] train_loss: 0.090  test_accuracy: 0.886
+[5,  3101] train_loss: 0.140  test_accuracy: 0.908
+[5,  3201] train_loss: 0.128  test_accuracy: 0.912
+[5,  3301] train_loss: 0.120  test_accuracy: 0.907
+[5,  3401] train_loss: 0.103  test_accuracy: 0.905
+[5,  3501] train_loss: 0.093  test_accuracy: 0.911
+[5,  3601] train_loss: 0.075  test_accuracy: 0.916
+[5,  3701] train_loss: 0.050  test_accuracy: 0.925
+[5,  3801] train_loss: 0.085  test_accuracy: 0.921
+[5,  3901] train_loss: 0.109  test_accuracy: 0.907
+[5,  4001] train_loss: 0.109  test_accuracy: 0.912
+[5,  4101] train_loss: 0.095  test_accuracy: 0.917
+[5,  4201] train_loss: 0.100  test_accuracy: 0.905
+[5,  4301] train_loss: 0.079  test_accuracy: 0.912
+[5,  4401] train_loss: 0.093  test_accuracy: 0.920
+[5,  4501] train_loss: 0.090  test_accuracy: 0.926
+[5,  4601] train_loss: 0.083  test_accuracy: 0.913
+[5,  4701] train_loss: 0.078  test_accuracy: 0.910
+[5,  4801] train_loss: 0.087  test_accuracy: 0.912
+[5,  4901] train_loss: 0.098  test_accuracy: 0.920
+[5,  5001] train_loss: 0.062  test_accuracy: 0.915
+[5,  5101] train_loss: 0.089  test_accuracy: 0.919
+[5,  5201] train_loss: 0.082  test_accuracy: 0.920
+[5,  5301] train_loss: 0.072  test_accuracy: 0.919
+[5,  5401] train_loss: 0.114  test_accuracy: 0.906
+[5,  5501] train_loss: 0.069  test_accuracy: 0.915
+[5,  5601] train_loss: 0.070  test_accuracy: 0.912
+[5,  5701] train_loss: 0.115  test_accuracy: 0.905
+[5,  5801] train_loss: 0.091  test_accuracy: 0.905
+[5,  5901] train_loss: 0.090  test_accuracy: 0.896
+[5,  6001] train_loss: 0.071  test_accuracy: 0.899
+[5,  6101] train_loss: 0.103  test_accuracy: 0.916
+[5,  6201] train_loss: 0.092  test_accuracy: 0.887
+Finished Training

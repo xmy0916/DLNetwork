@@ -2,6 +2,7 @@ from model.LeNet import LeNet
 from model.AlexNet import AlexNet, AlexNet_pretrain
 from model.VggNet import VggNet
 from model.GoogLeNet import googlenet
+from model.ResNet import resnet
 model_dict = {
     "lenet": {
         "model": LeNet,
@@ -46,5 +47,18 @@ model_dict = {
         "batch_size": (8, 1000),
         "lr": 0.0001
     },
-    
+    "resnet": {
+        "model": resnet,
+        # name support list:[
+        #   “resnet18”,"resnet34","resnet50","resnet101","resnet152"
+        #     ]
+        "name": "resnet50",
+        "pretrained": True,
+        "epoch": 5,
+        "num_class": 10,
+        "save_path": "params/resnet.pth",
+        "input_size": (112, 112),  # 224跑不动...
+        "batch_size": (8, 1000),
+        "lr": 0.0001
+    },
 }
