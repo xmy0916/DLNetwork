@@ -39,7 +39,7 @@ net = model_dict[args.model]['model'](saveFeature=args.save_feature, cfg=model_d
 device = None
 # get device
 if torch.cuda.is_available():
-    device = torch.device("cuda:1")
+    device = torch.device("cuda:0")
 else:
     device = torch.device("cpu")
 net = net.to(device)
